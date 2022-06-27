@@ -2,6 +2,11 @@
 #include <list>
 #include <vector>
 
+// 반복자를 받을때 "call by value" 를 사용해도 나쁘지 않은 이유.
+// => 반복자는 대부분 크기가 작습니다. "포인터 한개 크기" 
+// => 그래서 복사본에 대한 오버헤드는 거의 없습니다.
+// => 대부분 call by reference 보다 call by value 사용
+
 template<typename T>
 typename T::value_type sum(T first, T last)
 {
