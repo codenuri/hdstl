@@ -16,16 +16,19 @@
 
 int main()
 {
-	std::forward_list<int> s1 = { 1,2,3 };
-	std::list<int> s2 = { 1,2,3 };
-	std::vector<int> v = { 1,2,3,4,5,6,7,8,9,10 };
+	// 핵심 1. 각 컨테이너의 반복자가 어느 카테고리인지 반드시 알아야 합니다.
+	std::forward_list<int> s1 = { 1,2,3 };	// 전진형반복자 : ++
+	std::list<int> s2 = { 1,2,3 };			// 양방형반복자 : ++, --
+	std::vector<int> v = { 1,2,3,4,5}; // 임의접근반복자 : ++, --, +,-,[]
 	
 	// 이제 아래 코드들을 생각해 보세요
-	std::reverse(s1.begin(), s1.end());
-	std::reverse(s2.begin(), s2.end());
+	// 핵심 2. 각 알고리즘은 인자로 받는 반복자의 카테고리가 정해져 있습니다.
+	std::reverse(s1.begin(), s1.end()); // error. 싱글리스트 반복자는
+										// 전진형, -- 연산 안됨
+	std::reverse(s2.begin(), s2.end()); // ok
 
-	std::sort(v.begin(),  v.end());
-	std::sort(s1.begin(), s1.end());
-	std::sort(s2.begin(), s2.end());
+//	std::sort(v.begin(),  v.end());
+//	std::sort(s1.begin(), s1.end());
+//	std::sort(s2.begin(), s2.end());
 
 }
