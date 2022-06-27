@@ -39,20 +39,20 @@ public:
 //----------------------
 // 이제 advance 를 카테고리 별로 제공
 template<typename T>
-void advance_imp(T& p, int sz, std::random_access_iterator_tag)
+inline void advance_imp(T& p, int sz, std::random_access_iterator_tag)
 {
 	p = p + sz;
 	std::cout << "random 버전" << std::endl;
 }
 template<typename T>
-void advance_imp(T& p, int sz, std::input_iterator_tag)
+inline void advance_imp(T& p, int sz, std::input_iterator_tag)
 {
 	while (sz--)
 		++p;	
 	std::cout << "random 아닌 버전" << std::endl;
 }
 template<typename T>
-void advance(T& p, int sz) // sz > 0 일때만 고려하겠습니다.
+inline void advance(T& p, int sz) // sz > 0 일때만 고려하겠습니다.
 {
 	// 여기서는 반복자의 종류에 따라 위에 있는 함수를 호출합니다.
 	// 반복자 T의 종류는 T 안에 약속된 형태(iterator_category) 로 
