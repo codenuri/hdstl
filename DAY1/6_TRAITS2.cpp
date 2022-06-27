@@ -17,14 +17,22 @@
 
 template<typename T> struct iterator_traits
 {
-	using value_type = T::value_type;
+	using value_type = typename T::value_type;
+};
+
+// T = raw pointer 인 경우는 구현을 변경하기 위해 부분 특수화
+template<typename T> struct iterator_traits<T*>
+{
+	using value_type = T;
 };
 
 
 template<typename T>
-typename T::value_type sum(T first, T last)
+//typename T::value_type sum(T first, T last)
+typename iterator_traits<T>::value_type sum(T first, T last)
 {
 //	typename T::value_type s = 0;
+
 	typename iterator_traits<T>::value_type s = 0;
 
 	while (first != last)
