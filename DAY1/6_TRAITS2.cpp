@@ -30,6 +30,7 @@ template<typename T> struct iterator_traits<T*>
 template<typename T>
 //typename T::value_type sum(T first, T last)
 typename iterator_traits<T>::value_type sum(T first, T last)
+//auto sum(T first, T last)
 {
 //	typename T::value_type s = 0;
 
