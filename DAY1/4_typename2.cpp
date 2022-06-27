@@ -47,6 +47,7 @@ int main()
 // 그 타입을 알고 싶을때가 있습니다. - 위에 있는 print_first_element
 
 // 그래서 list 를 만들때 아래처럼 만들었습니다.
+/*
 template<typename T> class list
 {
 public:
@@ -56,6 +57,17 @@ public:
 
 list<int> s = { 1,2,3 };
 list<int>::value_type n = s.front(); // n의 타입을 생각해 보세요
+*/
+
+// 일반 적인 클래스			STL 의 템플릿 기반 클래스들(list, vector)
+// 1. 멤버 데이타				// 1. 멤버 데이타
+// 2. 멤버 함수				// 2. 멤버 함수
+//							// 3. 멤버 타입 <== 이 개념이 추가적으로 있습니다.
+
+// cppreference.com 에서 "std::list" 검색해보세요..
+
+
+
 
 
 
