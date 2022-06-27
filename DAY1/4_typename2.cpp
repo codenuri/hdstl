@@ -23,8 +23,12 @@ void print_first_element(std::vector<T>& v)
 template<typename T>
 void print_first_element(T& v)
 {
-	// T : std::list<double>
-	? n = v.front();
+	// T			 : std::list<double>
+	// T::value_type : std::list<double>::value_type => double
+	typename T::value_type n = v.front();
+
+	// C++11 이후에는 아래처럼 auto 로 하면 편리합니다.
+	auto n1 = v.front();
 
 	std::cout << n << std::endl;
 }
@@ -49,6 +53,7 @@ public:
 //	typedef T value_type; // C++11이전 스타일
 	using value_type = T; // C++11 이후 코딩 스타일
 };
+
 list<int> s = { 1,2,3 };
 list<int>::value_type n = s.front(); // n의 타입을 생각해 보세요
 
