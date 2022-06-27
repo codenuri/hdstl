@@ -27,7 +27,12 @@ int main()
 {
 	double x[10] = { 1,2,3,4,5,6,7,8,9,10 };
 
-	double* p = find(x, x + 3, 5);
+//	double* p = find(x, x + 3, 5);
+//	double* p = find(x, x + 배열의크기, 5);
+//	double* p = find(x, x + sizeof(x) / sizeof(x[0]), 5);
+	double* p = find(x, x + std::size(x), 5); // 이렇게 해도 됩니다.
+											// 더 좋은 방법도 있는데..
+											// 오후에 설명하겠습니다
 
 	if (p == x + 3)
 		std::cout << "not found" << std::endl;
