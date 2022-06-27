@@ -21,14 +21,31 @@ int main()
 	std::list<int> s2 = { 1,2,3 };			// 양방형반복자 : ++, --
 	std::vector<int> v = { 1,2,3,4,5}; // 임의접근반복자 : ++, --, +,-,[]
 	
+
 	// 이제 아래 코드들을 생각해 보세요
 	// 핵심 2. 각 알고리즘은 인자로 받는 반복자의 카테고리가 정해져 있습니다.
-	std::reverse(s1.begin(), s1.end()); // error. 싱글리스트 반복자는
+//	std::reverse(s1.begin(), s1.end()); // error. 싱글리스트 반복자는
 										// 전진형, -- 연산 안됨
 	std::reverse(s2.begin(), s2.end()); // ok
 
-//	std::sort(v.begin(),  v.end());
-//	std::sort(s1.begin(), s1.end());
-//	std::sort(s2.begin(), s2.end());
+	// std::sort : 퀵 소트이므로 "임의접근 반복자" 만 됩니다.
+	std::sort(v.begin(),  v.end());  // ok
+//	std::sort(s1.begin(), s1.end()); // error
+//	std::sort(s2.begin(), s2.end()); // error
 
+	// 그럼, list는 sort 할수 없을까 ?
+	// => 퀵 소트 대신 다른 알고리즘(bubble, selection등)을 사용하면 된다.
+	// => 그래서, list 는 멤버함수 sort 가 있습니다.
+	s2.sort(); // ok.
+	s1.sort(); 
+
+	// 질문, vector는 sort 멤버함수가 있을까요 ?
+	v.sort(); // 없습니다. vector 는 "임의 접근 반복자" 이므로 
+				// 모든 알고리즘(멤버가 아닌 함수)를 사용할수 있습니다.
+				// sort() 멤버를 제공할 필요 없습니다
+				// std::sort(v.begin(), v.end()) 하면 됩니다.
+
+//	std::sort()
 }
+
+
