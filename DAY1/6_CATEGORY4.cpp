@@ -58,6 +58,8 @@ void advance(T& p, int sz) // sz > 0 일때만 고려하겠습니다.
 	// 반복자 T의 종류는 T 안에 약속된 형태(iterator_category) 로 
 	// 조사합니다
 	// T::iterator_category : 5개 종류의 타입중 한개 입니다.
+
+	// "Tag Dispatching" 이라고 불리는 "정말 유명한 기술" 입니다.
 	advance_imp(p, sz, typename T::iterator_category() );
 }
 
