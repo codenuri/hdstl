@@ -1,0 +1,16 @@
+강석민 강사 ( smkang @ codenuri.co.kr )
+
+1. github.com/codenuri/hdstl 에 접속하시면 "DAY1.zip" 받으실수 있습니다.
+
+2. 실습환경
+   visual studio 2017 이상 버전 ~ 
+   또는 g++, clang 등도 사용가능. 
+   강사는 visual studio 2022 와 g++12.1 사용
+
+3. 주요 내용 : C++ 표준 라이브러리인 STL 에 대한 사용법 + 구현 원리 등
+   난이도   : 중급 정도.. 
+   필수 조건 : C++ 문법
+ 
+   C++버전 : ~ C++17 (자료구조와 알고리즘, 스마트포인터 등의 유틸리티)
+            C++20 에서 추가된 "ranges" 는 마지막날 잠깐 소개.
+
