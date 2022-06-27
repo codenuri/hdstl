@@ -91,5 +91,5 @@ int main()
 	// 이제 p 를 포인터라고 생각하고 사용하시면 됩니다.
 	std::cout << *p << std::endl; // 50
 	++p;
-	std::cout << *p << std::endl; // 30
+	std::cout << *p << std::endl; // 40
 }
