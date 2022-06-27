@@ -12,16 +12,15 @@
 
 // <algorithm> 이라는 표준 헤더에 이미 아래와 같은 find 가 있습니다.
 
-template<typename T1, typename T2>
-T1 find(T1 first, T1 last, T2 c)
+// cppreference.com 에서 "std::find" 찾아 보세요.
+template<typename InputIter, typename Val>
+InputIter find(InputIter first, InputIter last, const Val& c)
 {
 	while (first != last && *first != c)
 		++first;
 
 	return first;
 }
-
-
 
 int main()
 {
@@ -39,3 +38,11 @@ int main()
 	else
 		std::cout << "found : " << *p << std::endl;
 }
+
+// p가 반복자 일때
+// 입력 반복자 : =*p,  ++p  가 가능한 반복자
+
+// std::find 같은 알고리즘의 요구 조건을 논리적으로 표현하기 위한 용어
+
+// 그런, 입력 반복자를 가지는 컨테이너는 뭔가요 ?
+// list 는 "양방향 반복자"입니다. 그런데. 입력 반복자의 모든 조건을 충족합니다.
