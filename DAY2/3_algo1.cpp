@@ -1,8 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <list>
-#include <algorithm>
-#include <ranges>
+#include <algorithm> // 
 
 // 알고리즘 
 // 일반적인 용어   : "문제를 해결하는 방법" 이라는 의미
@@ -36,7 +35,7 @@ int main()
 
 	// 그런데, C++20 에서 해결했습니다.(새로운 문법 도입)
 	// => 그래서 컨테이너 버전이 있습니다.
-	auto p3 = std::ranges::find(v , 3);
+	auto p3 = std::ranges::find(v , 3); // <algorithm> 만 있으면 됩니다.
 
 	return 0;
 }
