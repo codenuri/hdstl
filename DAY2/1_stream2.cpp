@@ -13,5 +13,5 @@ int main()
 	std::ostream_iterator<int> p1(f, " ");
 
 	*p1 = 10;
-	*p2 = 20; // a.txt 에 "20" 쓰기
+	*p1 = 20; // a.txt 에 "20" 쓰기
 }
