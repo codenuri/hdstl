@@ -27,6 +27,15 @@ int main()
 
     show(s3);
 
+    std::list<int> s4;
+
+    // transform 은 인자 4개인 버전도 있습니다.
+    std::transform(s1.begin(), 
+                   s1.end(),
+                   std::back_inserter(s4),
+                   [](int a) { return a * 10; });
+
+    show(s4);
 	return 0;
 }
 
