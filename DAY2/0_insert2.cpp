@@ -26,6 +26,7 @@ int main()
 	// 2. C++11 의 range-for 사용
 //	for (auto e : s1)
 //	{
+//      e = 10; // 이렇게 넣으려면 auto& e로 하세요
 //		s2.push_back(e); // ok.. 
 //	}
 
