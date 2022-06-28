@@ -14,6 +14,8 @@ public:
 // C++14까지는 클래스 템플릿은 항상 타입인자를 전달해야 합니다.
 // 이 경우 좀 복잡해 보일수 있습니다.
 // 함수 템플릿의 도움을 얻으면 편리합니다.
+// => object generator 라고 불리는 기술 입니다.
+// => 주의! make_list 는 표준에는 없습니다.
 template<typename T> 
 list<T> make_list(int sz, T value)
 {
@@ -34,6 +36,7 @@ int main()
 						 // C++14 까지는 안됩니다.
 
 	auto s3 = make_list<int>(10, 3); // 타입을 전달한 정확한 표기법
+	auto s4 = make_list(10, 3); // 하지만, 함수 템플릿은 타입인자 생략이 가능합니다.
 
 }
 // type deduction은 parameter가 있는 경우만 가능하겠네요? => 네 안됩니다
