@@ -35,6 +35,7 @@ public:
 	// 사용자가 편리하도록 몇가지 멤버함수 제공해 주세요
 	void reset() { bs.set(); } // 다시 1로 놓고
 	int count() { return bs.count(); } // 사용가능한 난수의 갯수
+					// bitset bs 안에 1로 된 요소의 갯수
 };
 
 //URandom urand; 
