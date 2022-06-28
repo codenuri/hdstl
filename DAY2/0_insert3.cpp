@@ -29,9 +29,17 @@ int main()
 	*/
 
 	// 삽입 반복자는 함수 버전을 사용하는것이 편리합니다.
-	std::copy(s1.begin(), s1.end(), std::back_inserter(s2));
-			// 1, 2, 3, 4, 5, 10, 20, 30, 40, 50
+//	std::copy(s1.begin(), s1.end(), std::back_inserter(s2));
+// 				// 1, 2, 3, 4, 5, 10, 20, 30, 40, 50
 
+//	std::copy(s1.begin(), s1.end(), std::front_inserter(s2));
+				// 50, 40, 30, 20, 10, 1, 2, 3, 4, 5
+
+	// 임의 삽입 반복자를 만드는 함수는 인자가 2개 입니다.
+	// (어느컨테이너, 어느 위치)
+	// 아래 코드는 임의삽입을 사용해서 "앞쪽에 넣는 코드" 입니다.
+	std::copy(s1.begin(), s1.end(), std::inserter(s2, s2.begin()));
+				// 10, 20, 30, 40, 50, 1, 2, 3, 4, 5
 
 	for (auto& n : s2)
 		std::cout << n << ", ";
