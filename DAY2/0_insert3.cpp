@@ -1,6 +1,11 @@
 #include <iostream>
 #include <list>
-#include <iterator>
+#include <iterator>//  // std::advance
+
+
+// 위치가 아닌 값을 기준으로 삽입할 수도 있나요?
+// => 값을 기준으로 반복자를 찾으세요. std::find()
+// => 그리고 반복자를 보내세요.
 
 // 삽입반복자종류
 
@@ -45,7 +50,9 @@ int main()
 	auto pos = s2.begin();
 	++pos;
 //	std::advance(pos, 2);
-	std::copy(s1.begin(), s1.end(), std::inserter(s2, pos));
+//	std::copy(s1.begin(), s1.end(), std::inserter(s2, pos));
+	std::copy(s1.begin(), s1.end(), 
+		std::inserter(s2, std::find(s2.begin(), s2.end(), 4)));
 
 
 	for (auto& n : s2)
