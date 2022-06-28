@@ -20,7 +20,7 @@ int main()
 
 	// 주어진 구간에서 "k의 배수"를 찾아라!!
 	// => ? 를 채워 보세요.. 
-	auto ret2 = std::find_if(v.begin(), v.end(), ?);
+	auto ret2 = std::find_if(v.begin(), v.end(), "함수 + 지역변수인k를 묶어서");
 
 	// ret1, ret2 는 결국 반복자 입니다. *ret1 하면 요소 출력됩니다.
 	std::cout << *ret1 << std::endl;
