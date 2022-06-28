@@ -38,9 +38,21 @@ int main()
 	// 임의 삽입 반복자를 만드는 함수는 인자가 2개 입니다.
 	// (어느컨테이너, 어느 위치)
 	// 아래 코드는 임의삽입을 사용해서 "앞쪽에 넣는 코드" 입니다.
-	std::copy(s1.begin(), s1.end(), std::inserter(s2, s2.begin()));
+//	std::copy(s1.begin(), s1.end(), std::inserter(s2, s2.begin()));
 				// 10, 20, 30, 40, 50, 1, 2, 3, 4, 5
+
+	// 임의삽입을 통한 2번째 요소 앞에 삽입
+	auto pos = s2.begin();
+	++pos;
+//	std::advance(pos, 2);
+	std::copy(s1.begin(), s1.end(), std::inserter(s2, pos));
+
 
 	for (auto& n : s2)
 		std::cout << n << ", ";
 }
+// insert 로 여러개 넣으면 : 루프를 만들어야 합니다.
+//s2.insert(10);
+//s2.insert(20);
+//s2.insert(30);
+// 삽입반복자를 사용하면    : 한줄로 표현 됩니다.
