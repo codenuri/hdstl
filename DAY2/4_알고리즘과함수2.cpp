@@ -20,7 +20,10 @@ int main()
 
     // s1 과 s2 구간의 각 요소의 "곱"을 s3에 넣어 보세요
     // 단, 람다 표현식으로 해보세요.. 
-    std::transform(?, ?, ?, ?,  ?);
+    std::transform(s1.begin(), s1.end(), 
+                   s2.begin(), 
+                   std::back_inserter(s3),
+                   [](int a, int b) { return a * b; });
 
     show(s3);
 
