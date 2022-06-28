@@ -3,6 +3,9 @@
 
 class URandom
 {
+//	bool history[1000]; // 1000 byte 메모리 사용=> 최악
+						// 1000 bit 면 됩니다.
+
 	std::bitset<10> bs;	// 10비트 관리
 	bool recycle;
 public:
@@ -21,31 +24,28 @@ public:
 			else
 				return -1;  // 더이상 난수 없음.
 		}
-
 		int k = 0;
-
 		while ( ! bs.test( k = rand() % 10) );
-
 		bs.reset(k);
 
 
 		return k;
 	}
+
+	// 사용자가 편리하도록 몇가지 멤버함수 제공해 주세요
+	void reset() { bs.set(); } // 다시 1로 놓고
+	void count() { return bs.count(); } // 사용가능한 난수의 갯수
 };
 
-URandom urand; 
-
-
-
-
-
-
+//URandom urand; 
+URandom urand(true);
 
 int main()
 {
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < 5; i++)
 		std::cout << urand() << std::endl;
 	
+	std::cout << urand.count() << std::endl; // 앞으로 5개 더 사용가능
 }
 
 
