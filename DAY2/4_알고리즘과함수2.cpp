@@ -12,11 +12,15 @@ int main()
     std::list<int> s3;
 
     // transform 알고리즘
-    std::transform(s1.begin(), s1.end(),   // 1. 이구간의 요소들을
-                   s2.begin(),             // 2. 이구간의 요소와 함께
-                   //s3.begin(),// 4. 함수의 결과를 여기에 담아달라
-                   std::back_inserter(s3), 
-                   foo);      // 3. 이 함수로 보내서
+//    std::transform(s1.begin(), s1.end(),   // 1. 이구간의 요소들을
+//                   s2.begin(),             // 2. 이구간의 요소와 함께
+//                   //s3.begin(),// 4. 함수의 결과를 여기에 담아달라
+//                   std::back_inserter(s3), 
+//                   foo);      // 3. 이 함수로 보내서
+
+    // s1 과 s2 구간의 각 요소의 "곱"을 s3에 넣어 보세요
+    // 단, 람다 표현식으로 해보세요.. 
+    std::transform(?, ?, ?, ?,  ?);
 
     show(s3);
 
