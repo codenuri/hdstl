@@ -24,14 +24,18 @@ class set
 public:
 	void insert(const T& elem)
 	{
-		if ( f(root->elem, elem) ) // 크기 비교시 템플릿 2번째 인자로 보낸
+		// 만약 2개 요소의 크기비교를 아래 처럼 직접 "<" 를 사용 했다면
+		// 사용자가 요소의 비교 정책을 교체 할수 없게 됩니다.
+		if (root->elem < elem)
+		{
+		}
+		// 그래서 아래 처럼 2번째 템플릿 인자로 전달된 타입의 객체(함수객체)
+		// 를 사용해서 비교 하고 있습니다.
+		if (f(root->elem, elem)) // 크기 비교시 템플릿 2번째 인자로 보낸
 		{						   // 객체 사용
 		}
-	
-
+	}	
 };
-
-
 int main()
 {
 	std::set<int> s; // Red Black Tree 입니다.
