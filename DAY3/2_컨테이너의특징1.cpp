@@ -16,6 +16,10 @@ int main()
 	std::allocator<int> ax; // int 타입의 메모리를 할당/해지하는 객체
 							// C++ 표준이 제공하는 할당기 
 							// 내부적으로 new/delete 사용
+	// 이제 메모리 할당 방식을 변경하려면
+	// => 위 한줄만 변경하면 됩니다.
+	// => 아래 코드는 변경될 필요 없습니다.
+
 	int* p3 = ax.allocate(1); // int 한개 할당
 	ax.deallocate(p3, 1); 
 
