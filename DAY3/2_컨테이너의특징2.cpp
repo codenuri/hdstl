@@ -22,6 +22,8 @@ public:
 		ax.deallcate(buff, sz); // 메모리 해지
 	}
 };
+
+
 int main()
 {
 	std::vector<int> v(5);
