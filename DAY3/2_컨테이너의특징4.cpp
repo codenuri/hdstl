@@ -20,7 +20,7 @@ class set
 { 
 	// tree 에 필요한 멤버들
 	Alloc ax; // 메모리 할당기
-	PF    f;  // 비교에 사용할 함수 객체
+	PR    f;  // 비교에 사용할 함수 객체
 public:
 	void insert(const T& elem)
 	{
