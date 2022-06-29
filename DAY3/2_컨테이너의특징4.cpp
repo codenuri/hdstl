@@ -1,6 +1,6 @@
 #include <set> // Red Black Tree
 #include <functional>
-
+#include <iostream>
 // 107 ~ 108
 
 // 단위 전략 디자인 ( policy base design )
@@ -13,6 +13,7 @@
 
 
 // STL set 의 원리는 아래와 같습니다.
+/*
 template<typename T,					// 저장할 타입
 	     typename PR = std::less<T>,	// 요소를 비교할때 사용할함수객체
 		 typename Alloc = std::allocator<T> >
@@ -36,9 +37,13 @@ public:
 		}
 	}	
 };
+*/
 int main()
 {
-	std::set<int> s; // Red Black Tree 입니다.
+//	std::set<int> s; // Red Black Tree 입니다. std::less<int> 로 요소 비교
+
+	std::set<int, std::greater<int> > s;
+					// 큰것을 왼쪽에, 작은 것은 오른쪽
 
 	s.insert(15);
 	s.insert(25);
