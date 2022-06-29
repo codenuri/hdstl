@@ -29,7 +29,13 @@ int main()
 
 	for (auto& e : v)
 	{
-		std::reverse(e.begin(), e.end());
+//		std::reverse(e.begin(), e.end());
+
+		// 'i' 문자를 공백으로 치환해 달라
+		std::replace(e.begin(), e.end(), 'i', ' ');
+
+		// 위 한줄을 참고 해서, "모든 모음"을 공백으로 치환해 보세요.
+		// => 최선의 코드를 생각해 보세요..
 	}
 
 
