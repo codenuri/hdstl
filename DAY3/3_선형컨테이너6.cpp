@@ -32,12 +32,13 @@ int main()
 //		std::reverse(e.begin(), e.end());
 
 		// 'i' 문자를 공백으로 치환해 달라
-		std::replace(e.begin(), e.end(), 'i', ' ');
+//		std::replace(e.begin(), e.end(), 'i', ' ');
 
 		// 위 한줄을 참고 해서, "모든 모음"을 공백으로 치환해 보세요.
 		// => 최선의 코드를 생각해 보세요..
+		std::replace_if(e.begin(), e.end(), 조건함수, ' ');
 	}
-
+	// 4:05분에 이어집니다.
 
 
 	//-------------------------------------
