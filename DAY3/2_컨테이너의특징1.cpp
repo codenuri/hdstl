@@ -14,7 +14,8 @@ int main()
 
 	// STL 에는 메모리 할당기라는 개념이 있습니다.
 	std::allocator<int> ax; // int 타입의 메모리를 할당/해지하는 객체
-
+							// C++ 표준이 제공하는 할당기 
+							// 내부적으로 new/delete 사용
 	int* p3 = ax.allocate(1); // int 한개 할당
 	ax.deallocate(p3, 1); 
 
