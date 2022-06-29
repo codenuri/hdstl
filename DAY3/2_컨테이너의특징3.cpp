@@ -9,7 +9,8 @@ public:
 		void* p = malloc(sizeof(T) * sz);
 
 		printf("allocate - %d byte 할당, %p\n", sz, p);
-		return p;
+
+		return static_cast<T*>(p); // <== 캐스팅 추가
 	}
 	void deallocate(T* p, std::size_t sz)
 	{
