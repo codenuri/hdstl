@@ -21,7 +21,17 @@ int main()
 	// 각 요소 접근은 "std::get" 을 사용합니다
 	std::get<0>(t3) = 100;
 
-	std::cout << std::get<0>(t3) << std::endl;
+	std::cout << std::get<0>(t3) << std::endl; // 100
+	std::cout << std::get<2>(t3) << std::endl; // 3.4
+
+	// std::make_tuple 을 사용하면 편리하게 만들수 있습니다.
+
+	auto t4 = std::make_tuple(1, 3.4, 'A', 10); 
+				// int, double, char, int
+
+	// pair 안에 pair 넣을때 C++11 이후에는 아래 표기법도 가능은 합니다
+	// => "중괄호 초기화" 라는 문법을 공부해 보세요.
+	std::pair<int, std::pair<int, double>> p2(1, { 1, 3.4 });
 
 }
 
