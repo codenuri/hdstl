@@ -30,8 +30,13 @@ int main()
 	std::list<int> ss;  // list 를 한쪽으로만 사용해야지!! 
 	ss.push_back(10);   // 라고 결심했는데..
 	ss.push_back(20);
-
 	ss.push_front(30); // 실수했다!!! => 실수 할수 없게 하는게 최선 아닐까요 ?
 
 	// std::stack<int> s; 로 하면 절대 앞에 넣을수 없습니다
+
+	std::stack<std::list<int>> s3;
+	std::stack<std::vector<int>> s4;
+
+	// std::array      : "스택메모리" 에 요소 보관
+	// 그외 모든 컨테이너 : heap 에 요소 보관
 }
