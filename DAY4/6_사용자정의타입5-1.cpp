@@ -37,11 +37,13 @@ int main()
 										//    오른쪽으로 이동
 										// else
 										//		찾았다.
-	std::cout << ret1->x << ",  " << ret1->y << std::endl; 
+	std::cout << ret1->x << ", " << ret1->y << std::endl; 
 							// 3, 2
 
-
-//	auto ret2 = std::find(s.begin(), s.end(), Point(3, 2));
+	// 선형 검색 알고리즘 "std::find" 는 "==" 로 비교해서 찾게 됩니다.
+	// => Point 타입이 == 연산이 안되면 error
+	// => equality(동일성) 검색 입니다.
+	auto ret2 = std::find(s.begin(), s.end(), Point(3, 2));
 }
 
 
