@@ -25,13 +25,19 @@ int main()
 	// 1. 표준 출력 객체는 이미 "cout" 이 생성되어 있으므로 사용하면 됩니다.
 	std::cout << "hello";
 
+
 	// 2. 파일 입출력이 필요하면 "파일 스트림"객체를 만들어 사용하면 됩니다
 	std::ofstream fout("a.txt");
 
 	fout << "hello"; // cout 과 사용법이 동일합니다.
 
+
 	// 3. 메모리(문자열)출력
 	std::ostringstream oss;
-	oss << "hello";
+	oss << "hello";  // "hello" 를 oss 의 내부 버퍼(문자열)에 출력
+
+	std::string s = oss.str(); // oss 가 가진 내부 문자열 꺼내기
+
+	std::cout << s << std::endl; // "hello"
 
 }
