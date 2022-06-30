@@ -28,12 +28,11 @@ struct PeopleEqual
 		return p1.name == p2.name && p1.age == p2.age;
 	}
 };
-
 int main()
 {
 	// 사용자 정의 타입을 
 	// set 에 넣으려면 : 크기 비교가 되어야 합니다.
-	// unordered     : hash 함수 가 있어야 합니다.
+	// unordered     : "hash 함수객체 + 객체비교함수객체" 가 있어야 합니다.
 
 //	std::unordered_set<People> s;
 //  std::unordered_set<People, std::hash<People> > s;
