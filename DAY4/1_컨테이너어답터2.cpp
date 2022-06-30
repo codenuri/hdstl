@@ -34,8 +34,8 @@ int main()
 
 	// std::stack<int> s; 로 하면 절대 앞에 넣을수 없습니다
 
-	std::stack<std::list<int>> s3;
-	std::stack<std::vector<int>> s4;
+	std::stack<int, std::list<int>> s3;
+	std::stack<int, std::vector<int>> s4;
 
 	// std::array      : "스택메모리" 에 요소 보관
 	// 그외 모든 컨테이너 : heap 에 요소 보관
