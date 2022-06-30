@@ -8,7 +8,7 @@
 
 int main()
 {
-	std::ifstream fin("readme.txt"); // 파일 하나 구해 두세요
+	std::ifstream fin("4_map2.cpp"); // 파일 하나 구해 두세요
 
 	std::map<std::string, std::list<int>> indexMap; // 핵심 자료구조
 	std::string s;
@@ -38,9 +38,12 @@ int main()
 		std::cout << p.first << " : "; // 단어
 		
 		for (auto e : p.second) // list 모든 항목 꺼내기
-			std::cout << ", ";
+			std::cout << e << ", ";
 
+		std::cout << std::endl; // 개행
 	}
 }
+// readme.txt 파일 하나 구해서 현재 폴더(DAY4) 안에 넣어두고,
+// 실행해 보세요
 
 
