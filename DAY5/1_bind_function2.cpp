@@ -1,6 +1,6 @@
 #include <iostream>
-#include <functional>
-using namespace std::placeholders;
+#include <functional> // std::function, std::bind 를 위한 헤더.
+using namespace std::placeholders; // _1, _2, 
 
 void f1(int a)               { printf("f1 : %d\n", a); }
 void f2(int a, int b)        { printf("f2 : %d, %d\n", a, b);}
