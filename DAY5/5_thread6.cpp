@@ -17,10 +17,18 @@ int main()
 	// 미래에 받을수 있게 됩니다.
 	std::future<int> ft = std::async(std::launch::async, &foo); // foo를 비동기(스레드)로 실행해 달라
 				
+	// ft는 하나의 스레드만 대기 가능합니다.
+	// 또따른 스레드로 ft를 보낼수 없습니다. 보내려면 아래처럼하세요
+	std::shared_future<int> ft2 = ft.share();
+
+	// ft2는 다른 스레드로 보내서 대기 시켜도 됩니다
+
+
 	std::cout << "main 스레드 계속 실행" << std::endl;
 
 	// 이제 foo의 결과가 필요하면 아래 처럼 꺼냅니다.
 	int n = ft.get();  // 이 순간 스레드가 반환할때 까지 대기 합니다.
+			
 
 	std::cout << n << std::endl;
 }
