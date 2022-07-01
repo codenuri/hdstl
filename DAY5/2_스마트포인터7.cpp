@@ -22,5 +22,6 @@ int main()
 	sp1->bf = sp2;
 	sp2->bf = sp1;
 }
+//144 page ±×¸²
 
 
