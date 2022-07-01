@@ -17,11 +17,26 @@ public:
 		*ref = 1;
 	}
 
-
+	// 참조 계수 기반으로 만든 복사 생성자
+	Ptr(const Ptr& p)
+		: obj(p.obj), ref(p.ref) // 모든 멤버를 얕은복사후에
+	{
+		++(*ref); // 참조 계수 1증가
+	}
+	
+	// 참조계수를 사용할때의 소멸자 모양
+	~Ptr() 
+	{ 
+		if (--(*ref) == 0)
+		{
+			delete obj; // 자원 제거
+			delete ref; // 참조계수도 제거
+		}
+	}
 
 	T* operator->() { return obj; }
 	T& operator*() { return *obj; }
-	~Ptr() { delete obj; }
+	
 };
 
 
