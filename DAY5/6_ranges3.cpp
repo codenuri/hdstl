@@ -13,7 +13,7 @@ int main()
 
 	// 위 2줄은 아래 처럼해도 됩니다.
 
-	auto rv2 = v | std::views::filter([](int n) { return n % 2 == 0; } 
+	auto rv2 = v | std::views::filter([](int n) { return n % 2 == 0; })
 		         | std::views::take(3);
 
 
