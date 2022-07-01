@@ -25,8 +25,11 @@ public:
 	}
 };
 
-void foo(void* p)        { std::cout << "foo : " << (int)p << std::endl; }
-void goo(void* p, int a) { std::cout << "goo : " << (int)p << std::endl; }
+// 64 비트 환경에서 void* 가 64비트 이므로 int (32비트)에 담을수 없다고 경고.
+// => int(32bit) 대신 long long(64비트정수)
+void foo(void* p)        { std::cout << "foo : " << (long long)p << std::endl; }
+void goo(void* p, int a) { std::cout << "goo : " << (long long)p << std::endl; }
+
 
 int main()
 {
