@@ -17,7 +17,7 @@ int main()
 
 	std::cout << p.use_count() << std::endl; // 
 
-	if (!wp.expired())
+//	if (!wp.expired())
 	{
 		// 객체가 파괴되지 않았으므로 wp 를 사용해서 객체에 접근하고 싶다.
 		// wp->Go(); // error. wp로는 객체 접근 안됨
@@ -37,3 +37,5 @@ int main()
 
 }
 
+// 상호 참조같은 일이 없으면
+// "weak_ptr" 사용 안해도 됩니다... 
