@@ -20,14 +20,22 @@ int main()
 	
 	//==============================
 	using Meter      = std::chrono::duration<int, std::ratio<1, 1>>;
-	using CentiMeter = std::chrono::duration<int, std::ratio<?> >;
-	using MilliMeter = std::chrono::duration<int, std::ratio<??>>;
-	using KiloMeter  = std::chrono::duration<int, std::ratio< ? ? >>;
+	using CentiMeter = std::chrono::duration<int, std::ratio<1, 100> >;
+//	using MilliMeter = std::chrono::duration<int, std::ratio<1, 1000>>;
+	using MilliMeter = std::chrono::duration<int, std::milli>;
+
+	using KiloMeter  = std::chrono::duration<int, std::ratio<1000,1>>;
 
 	Meter m(3000); // 3000m
 	CentiMeter cm(m);
 
-	std::cout << cm.count() << std::endl;
+	std::cout << cm.count() << std::endl; // 300000
+
+//	KiloMeter km = m; // error. 데이타 손실의 가능성이 있기때문에
+
+	KiloMeter km = std::chrono::duration_cast<KiloMeter>(m);
+
+	std::cout << km.count() << std::endl; // 3
 }
 
 
