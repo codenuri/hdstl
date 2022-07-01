@@ -32,7 +32,11 @@ int main()
 
 	std::thread t2(&Test::goo, &test, 1, 3.4); // 멤버 함수 수행
 						// => 새로운 스레드가 test.goo(1,3.4) 수행
+
+	std::thread t3([]() { std::cout << "lambda" << std::endl; });
+
 	t2.join();
+	t3.join();
 }
 
 
